@@ -21,6 +21,7 @@ def subscribe_intent_callback(hermes, intent_message):
         result_sentence = "Test."
         current_session_id = intent_message.session_id
         hermes.publish_end_session(current_session_id, result_sentence)
+    else None 
 
 
 if __name__ == "__main__":
@@ -35,3 +36,5 @@ if __name__ == "__main__":
     mqtt_opts = MqttOptions(username=MQTT_USERNAME, password=MQTT_PASSWORD, broker_address=MQTT_BROKER_ADDRESS)
     with Hermes(mqtt_options=mqtt_opts) as h:
         h.subscribe_intents(subscribe_intent_callback).start()
+
+
