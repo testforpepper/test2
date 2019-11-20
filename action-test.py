@@ -37,4 +37,3 @@ if __name__ == "__main__":
     with Hermes(mqtt_options=mqtt_opts) as h:
         h.subscribe_intents(subscribe_intent_callback).start()
 
-
